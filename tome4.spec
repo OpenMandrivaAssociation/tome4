@@ -39,8 +39,8 @@ unzip -oj -qq game/engines/te4-%{version}.teae data/gfx/te4-icon.png -d .
 install -Dm644 te4-icon.png %{buildroot}%{_datadir}/pixmaps/%{name}.png
 
 install -Dm755 t-engine %{buildroot}%{_libexecdir}/tome4/t-engine
-install -Dm755 %{SOURCE1} %{buildroot}%{_bindir}/%{name}
-install -Dm644 %{SOURCE2} %{buildroot}%{_datadir}/applications/%{name}.desktop
+#install -Dm755 %{SOURCE1} %{buildroot}%{_bindir}/%{name}
+#install -Dm644 %{SOURCE2} %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 cp -r bootstrap %{buildroot}%{_libexecdir}/%{name}
 cp -r game %{buildroot}%{_libexecdir}/%{name}
