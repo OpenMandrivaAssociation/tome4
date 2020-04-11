@@ -12,7 +12,7 @@ BuildRequires:  fdupes
 #BuildRequires:  premake4
 BuildRequires:  premake
 BuildRequires:  unzip
-BuildRequires:  update-desktop-files
+#BuildRequires:  update-desktop-files
 BuildRequires:  pkgconfig(SDL2_image)
 BuildRequires:  pkgconfig(SDL2_mixer)
 BuildRequires:  pkgconfig(SDL2_ttf)
