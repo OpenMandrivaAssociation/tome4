@@ -6,7 +6,7 @@ License:        GPL3
 Group:          Games/RPG
 URL:            https://te4.org/
 Source0:        https://te4.org/dl/t-engine/t-engine4-src-%{version}.tar.bz2
-Source1:        tome4.sh
+#Source1:        tome4.sh
 Patch0:         tome4-1.6.7-use-system-SDL2.patch
 
 BuildRequires:  fdupes
