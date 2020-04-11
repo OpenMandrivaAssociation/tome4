@@ -56,7 +56,7 @@ StartupNotify=false
 Categories=Game;RolePlaying;
 EOF
 
-mkdir -p %{buildroot}%{_bindir}/tome4
+mkdir -p %{buildroot}%{_bindir}/
 cat > %{buildroot}%{_bindir}/tome4 <<EOF
 #!/usr/bin/sh
 cd "/usr/%{lib}/tome4"
