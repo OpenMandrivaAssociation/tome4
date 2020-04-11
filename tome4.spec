@@ -9,7 +9,7 @@ Source:         https://te4.org/dl/t-engine/t-engine4-src-%{version}.tar.bz2
 
 BuildRequires:  fdupes
 #BuildRequires:  pkgconfig
-#BuildRequires:  premake4
+BuildRequires:  premake
 BuildRequires:  premake
 BuildRequires:  unzip
 #BuildRequires:  update-desktop-files
@@ -29,8 +29,7 @@ A roguelike RPG in the original sense, featuring tactical turn-based combat and 
 %setup -q -n t-engine4-src-%{version}
 
 %build
-#premake4 gmake
-premake gmake
+premake4 gmake
 make config=release
 
 %install
