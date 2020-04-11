@@ -6,6 +6,7 @@ License:        GPL3
 Group:          Games/RPG
 URL:            https://te4.org/
 Source:         https://te4.org/dl/t-engine/t-engine4-src-%{version}.tar.bz2
+Patch0:         tome4-1.6.7-use-system-SDL2.patch
 
 BuildRequires:  fdupes
 #BuildRequires:  pkgconfig
@@ -19,7 +20,7 @@ BuildRequires:  pkgconfig(SDL2_ttf)
 BuildRequires:  pkgconfig(glu)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  pkgconfig(openal)
-BuildRequires:  pkgconfig(sdl)
+BuildRequires:  pkgconfig(sdl2)
 BuildRequires:  pkgconfig(vorbis)
 
 %description
@@ -27,6 +28,7 @@ A roguelike RPG in the original sense, featuring tactical turn-based combat and 
 
 %prep
 %setup -q -n t-engine4-src-%{version}
+%autopatch -p1
 
 %build
 premake4 gmake
