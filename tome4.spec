@@ -5,7 +5,8 @@ Summary:        Roguelike turn-based RPG
 License:        GPL3
 Group:          Games/RPG
 URL:            https://te4.org/
-Source:         https://te4.org/dl/t-engine/t-engine4-src-%{version}.tar.bz2
+Source0:        https://te4.org/dl/t-engine/t-engine4-src-%{version}.tar.bz2
+Source1:        tome4.sh
 Patch0:         tome4-1.6.7-use-system-SDL2.patch
 
 BuildRequires:  fdupes
@@ -41,6 +42,27 @@ install -Dm644 te4-icon.png %{buildroot}%{_datadir}/pixmaps/%{name}.png
 install -Dm755 t-engine %{buildroot}%{_libexecdir}/tome4/t-engine
 #install -Dm755 %{SOURCE1} %{buildroot}%{_bindir}/%{name}
 #install -Dm644 %{SOURCE2} %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=ToME4 - Tales of Maj'Eyal: Age of Ascendancy
+Comment=An open-source, single-player, role-playing roguelike game set in the world of Eyal.
+Exec=tome4
+Icon=tome4
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Game;RolePlaying;
+EOF
+
+mkdir -p %{buildroot}%{_bindir}/tome4
+cat > %{buildroot}%{_bindir}/tome4 <<EOF
+#!/usr/bin/sh
+cd "/usr/%{lib}/tome4"
+./t-engine &
+exit
+EOF
 
 cp -r bootstrap %{buildroot}%{_libexecdir}/%{name}
 cp -r game %{buildroot}%{_libexecdir}/%{name}
