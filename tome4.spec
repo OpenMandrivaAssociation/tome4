@@ -1,20 +1,14 @@
 Name:           tome4
-Version:        1.5.10
-Release:        0
+Version:        1.6.7
+Release:        1
 Summary:        Roguelike turn-based RPG
-License:        GPL-3.0-only AND SUSE-Freeware
-Group:          Amusements/Games/RPG
+License:        GPL3
+Group:          Games/RPG
 URL:            https://te4.org/
 Source:         https://te4.org/dl/t-engine/t-engine4-src-%{version}.tar.bz2
-Source1:        tome4.sh
-Source2:        tome4.desktop
-# PATCH-FIX-OPENSUSE Don't use a bundled version of SDL2
-Patch1:         system-SDL2.patch
-# PATCH-FIX-OPENSUSE Resolve conflicts between glext.h and glew.h
-Patch2:         conflicting_types_glext_and_glew.patch
+
 BuildRequires:  fdupes
-BuildRequires:  gcc
-BuildRequires:  pkgconfig
+#BuildRequires:  pkgconfig
 BuildRequires:  premake4
 BuildRequires:  unzip
 BuildRequires:  update-desktop-files
@@ -32,8 +26,6 @@ A roguelike RPG in the original sense, featuring tactical turn-based combat and 
 
 %prep
 %setup -q -n t-engine4-src-%{version}
-%patch1 -p1
-%patch2 -p1
 
 %build
 premake4 gmake
