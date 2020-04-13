@@ -46,7 +46,7 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Name=ToME4 - Tales of Maj'Eyal: Age of Ascendancy
 Comment=An open-source, single-player, role-playing roguelike game set in the world of Eyal.
-Exec=tome4
+Exec=/usr/libexec/tome4/t-engine
 Icon=tome4
 Terminal=false
 Type=Application
