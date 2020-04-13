@@ -10,11 +10,9 @@ Source0:        https://te4.org/dl/t-engine/t-engine4-src-%{version}.tar.bz2
 Patch0:         tome4-1.6.7-use-system-SDL2.patch
 
 BuildRequires:  fdupes
-#BuildRequires:  pkgconfig
 BuildRequires:  premake
 BuildRequires:  premake
 BuildRequires:  unzip
-#BuildRequires:  update-desktop-files
 BuildRequires:  pkgconfig(SDL2_image)
 BuildRequires:  pkgconfig(SDL2_mixer)
 BuildRequires:  pkgconfig(SDL2_ttf)
@@ -59,14 +57,14 @@ EOF
 cp -r bootstrap %{buildroot}%{_libexecdir}/%{name}
 cp -r game %{buildroot}%{_libexecdir}/%{name}
 
-ln -s %{_libexecdir}/%{name} %{_bindir}/%{name}
+#ln -s %{_libexecdir}/%{name} %{_bindir}/%{name}
 
 %fdupes %{buildroot}%{_libexecdir}/%{name}
 
 %files
 %license COPYING
 %doc COPYING-MEDIA CREDITS CONTRIBUTING
-%{_bindir}/%{name}
+#{_bindir}/%{name}
 %{_libexecdir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
