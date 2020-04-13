@@ -56,16 +56,10 @@ StartupNotify=false
 Categories=Game;RolePlaying;
 EOF
 
-mkdir -p %{buildroot}%{_bindir}/
-cat > %{buildroot}%{_bindir}/tome4 <<EOF
-#!/usr/bin/sh
-cd "/usr/%{lib}/tome4"
-./t-engine &
-exit
-EOF
-
 cp -r bootstrap %{buildroot}%{_libexecdir}/%{name}
 cp -r game %{buildroot}%{_libexecdir}/%{name}
+
+ln -s %{_libexecdir}/%{name} %{_bindir}/%{name}
 
 %fdupes %{buildroot}%{_libexecdir}/%{name}
 
