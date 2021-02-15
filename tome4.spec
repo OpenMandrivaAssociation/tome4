@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           tome4
 Version:        1.7.2
 Release:        1
