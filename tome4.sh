@@ -1,4 +1,4 @@
 #!/bin/sh
-cd "/usr/lib/tome4"
+cd "/usr/libexec/tome4"
 ./t-engine &
 exit
