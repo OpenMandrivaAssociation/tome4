@@ -2,7 +2,7 @@
 
 Name:           tome4
 Version:        1.7.2
-Release:        1
+Release:        2
 Summary:        Roguelike turn-based RPG
 License:        GPL3
 Group:          Games/RPG
